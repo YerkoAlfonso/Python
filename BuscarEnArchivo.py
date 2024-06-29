@@ -13,6 +13,6 @@ def buscar_en_archivo(ruta_archivo, texto_a_buscar):
         print("Ocurrió un error:", e)
 
 # Ejemplo de uso
-ruta_archivo = ""  # Cambia esto por la ruta de tu archivo
+ruta_archivo = "Hola"  # Cambia esto por la ruta de tu archivo
 texto_a_buscar = "- host:"  # Cambia esto por el texto que deseas buscar
 buscar_en_archivo(ruta_archivo, texto_a_buscar)
