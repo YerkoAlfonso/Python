@@ -1,0 +1,3 @@
+pip3 install shcheck
+
+python shcheck.py https://ventacursotest.unab.cl/Alumno/Login

