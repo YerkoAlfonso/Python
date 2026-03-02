@@ -1,0 +1,19 @@
+
+
+Analisis de codigo con semgrep
+
+Necesario tener instalador docker
+
+Ir a carpeta de raiz del proyecto y ejecutar
+
+docker run --rm -v "${PWD}:/src" -w /src semgrep/semgrep semgrep scan --config=auto
+Opcion para obtener archivo json
+docker run --rm -v "${PWD}:/src" -w /src semgrep/semgrep semgrep scan --config=auto --json > resultados-vcol.json
+
+Analisis de codigo .Net security-scan
+Ejecutar linea
+security-scan "VCOL.sln" --export "scan-results-$(Get-Date -Format 'yyyyMMdd-HHmmss').sarif" --verbose
+
+Considerar para hacer analsiis quitar esto de los archivos .csproj de cada proyecto
+<Import Project="$$   (VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'   $$(VSToolsPath)' != ''" />
+<Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
